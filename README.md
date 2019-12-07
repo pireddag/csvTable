@@ -9,6 +9,10 @@ The `csvTable` command takes as its single argument the absolute file path of a 
 
 There is a test file and its pdf output (test_csvTables.tm and test_csvTables.pdf).
 
+## Note
+
+The output is directly formatted into the TeXmacs output, i.e. it does not get expanded into the TeXmacs file, as direct input in a Scheme session does. For this reason, all formatting of the table needs to be coded in Scheme.
+
 ## Security
 
 In order to run this macro in TeXmacs it is necessary to set the security level to "Accept all scripts".
