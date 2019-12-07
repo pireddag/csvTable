@@ -1,4 +1,4 @@
-(texmacs-module (Tables csvTable))
+(texmacs-module (tables csvTable))
 
 ;; ;; string-split exists in Guile but not in Mit Scheme
 ;; ;; I assume I will be able to write the code for Guile without the following function
@@ -53,5 +53,5 @@
 	   (set! filename (tree->stree filename))
 (call-with-input-file  filename
   (lambda (dataPort)
-    (let* ((tableTest  (file->TeXmacsTable dataPort)))
-     (stree->tree `(wide-tabular ,tableTest))))))
+    (let* ((table  (file->TeXmacsTable dataPort)))
+     (stree->tree `(wide-tabular ,table))))))
