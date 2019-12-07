@@ -3,7 +3,7 @@
 <style|source>
 
 <\body>
-  <use-module|(Tables csvTable)>
+  <use-module|(tables csvTable)>
 
   <assign|csvTable|<macro|filename|<extern|csvTable|<arg|filename>>>>
 
