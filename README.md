@@ -3,11 +3,11 @@ Imports a csv file into a TeXmacs table
 
 The Scheme functions go in `.TeXmacs/progs/tables` (lowercase!). I have already placed them in a directory with the right name and nesting, the tree `/tables/` needs to be copied to the `prog` directory of TeXmacs.
 
-Load the package csvTable
+Load the package csvTable.
 
 The `csvTable` command takes as its single argument the absolute file path of a csv file and outputs its contens formatted into a wide Tabular environment.
 
-There is a test file and its pdf output (test_csvTables.tm and test_csvTables.pdf)
+There is a test file and its pdf output (test_csvTables.tm and test_csvTables.pdf).
 
 ## Security
 
