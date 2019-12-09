@@ -5,7 +5,7 @@
 <\body>
   <use-module|(tables csvTable)>
 
-  <assign|csvTable|<macro|filename|<extern|csvTable|<arg|filename>>>>
+  <assign|csvTable|<macro|fileData|fileFormat|<extern|csvTable|<arg|fileData>|<arg|fileFormat>>>>
 
   \;
 
