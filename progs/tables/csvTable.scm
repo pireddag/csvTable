@@ -63,7 +63,7 @@
 (define (composeTable TeXmacsTable tableUserSettings tableDefaults)
   (let* ((tabSettings  (append tableUserSettings tableDefaults)) ; appending associations makes the first match to assoc to be used
 					; (tabType (tableType tabSettings)))
-    	 (tabType (assocValue 'tableType tabSettings))) ; 'tableType here is the first element of the association pair, *not* the function tableType
+    	 (tabType (assocValue 'tableType tabSettings)))
     `(,tabType ,(append '(tformat) tableFormat `(,TeXmacsTable)))))
 ;; is it possible to write this using only the quasiquote and unquote operators?
 ;; tableFormat is a list, and I want its elements
