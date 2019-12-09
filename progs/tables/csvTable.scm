@@ -1,7 +1,7 @@
 (texmacs-module (tables csvTable))
 
 ;; ;; string-split exists in Guile but not in Mit Scheme
-;; ;; I assume I will be able to write the code for Guile without the following function
+;; ;; The following function is necessary for testing with Mit Scheme
 ;; ;; https://codereview.stackexchange.com/questions/75172/split-string-for-r7rs
 ;; ;; https://codereview.stackexchange.com/a/75178 (solution of Chris Jester-Young)
 ;; (define (string-split str delim)
@@ -46,12 +46,42 @@
 
 (define (file->TeXmacsTable dataPort)
    (table->TeXmacs (table->Scheme (readTable dataPort))))
-  
-;;  adapted example of https://ds26gte.github.io/tyscheme/index-Z-H-9.html
 
-(tm-define (csvTable filename)
-	   (set! filename (tree->stree filename))
-(call-with-input-file  filename
+
+;;; table composition
+
+(define tableDefaults '((tableType . wide-tabular)))
+
+;; appending associations makes the first match to assoc to be used
+;; (define (composeTableSettings tableUserSettings tableDefaults)
+;;   (append tableUserSettings tableDefaults))
+
+;; a function to extract values from associations
+(define (assocValue type aList)
+  (cdr (assoc type aList)))
+
+(define (composeTable TeXmacsTable tableUserSettings tableDefaults)
+  (let* ((tabSettings  (append tableUserSettings tableDefaults)) ; appending associations makes the first match to assoc to be used
+					; (tabType (tableType tabSettings)))
+    	 (tabType (assocValue 'tableType tabSettings))) ; 'tableType here is the first element of the association pair, *not* the function tableType
+    `(,tabType ,(append '(tformat) tableFormat `(,TeXmacsTable)))))
+;; is it possible to write this using only the quasiquote and unquote operators?
+;; tableFormat is a list, and I want its elements
+
+;;  adapted example of https://ds26gte.github.io/tyscheme/index-Z-H-9.html
+(tm-define (csvTable fileData fileFormat)
+	   (set! fileData (tree->stree fileData))
+	   (set! fileFormat (tree->stree fileFormat))
+(call-with-input-file  fileData
   (lambda (dataPort)
-    (let* ((table  (file->TeXmacsTable dataPort)))
-     (stree->tree `(wide-tabular ,table))))))
+    (let* ((TeXmacsTable  (file->TeXmacsTable dataPort)))
+      (begin
+	;;(display fileFormat)
+	(load fileFormat)
+	;;(display  `(wide-tabular ,(append '(tformat) tableFormat `(,TeXmacsTable))))
+	(stree->tree (composeTable TeXmacsTable tableUserSettings tableDefaults)))))))
+
+
+
+
+
