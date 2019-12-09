@@ -6,13 +6,15 @@ The Scheme functions go in `.TeXmacs/progs/tables` (lowercase!). I have already 
 Load the package csvTable.
 
 The `csvTable` command takes two arguments, both of which are absolute or relative file paths of a csv file and outputs its contents formatted into a wide Tabular environment.
+
 The first argument is the path to the data file, the second is the path to a file which specifies the formatting of the table.
 The formatting file is written in Scheme and defines two variables, `tableFormat` (for the format) and `tableUserSettings` (at the moment contains the table type only; it could be extended to contain other information).
+
 Both variables need to be defined and please keep them defined with the same syntax as they are now, as the program expects them to be so (there is no input parsing).
 
-(*for a while it did not work with relative paths, then it started working again. The error was caused probably by the incorrect naming of the module in the first line of csvTable.scm*) 
+(*For a while the package did not work with relative paths, then it started working again. The error was caused probably by the incorrect naming of the module in the first line of csvTable.scm*) 
 
-There is a test file and its pdf output (`test_csvTables.tm` and `test_csvTables.pdf`); they read the file `dataSchemeTable.txt` (data) and `tableFormat.scm` (format) (the TeXmacs file expects them to be in the same directory as itself).
+There is a test file and its pdf output (`test_csvTables.tm` and `test_csvTables.pdf`); they read the files `dataSchemeTable.txt` (data) and `tableFormat.scm` (format) (the TeXmacs file expects them to be in the same directory as itself).
 
 ## Note
 
