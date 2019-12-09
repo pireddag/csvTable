@@ -5,7 +5,7 @@ The Scheme functions go in `.TeXmacs/progs/tables` (lowercase!). I have already 
 
 Load the package csvTable.
 
-The `csvTable` command takes two arguments, both of which are absolute or relative file paths of a csv file and outputs its contents formatted into a wide Tabular environment.
+The `csvTable` command takes two arguments, both of which are absolute or relative file paths of a csv file, and outputs its contents formatted into a wide Tabular environment.
 
 The first argument is the path to the data file, the second is the path to a file which specifies the formatting of the table.
 The formatting file is written in Scheme and defines two variables, `tableFormat` (for the format) and `tableUserSettings` (at the moment contains the table type only; it could be extended to contain other information).
