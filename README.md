@@ -1,6 +1,12 @@
 # csvTable
 Imports a csv file into a TeXmacs table
 
+## ToDo
+Current status: program not working as necessary load is commented out
+filter commands which are allowed to load (script is too unsafe now)
+
+## Instructions
+
 The Scheme functions go in `.TeXmacs/progs/tables` (lowercase!). I have already placed them in a directory with the right name and nesting, the tree `/tables/` needs to be copied to the `prog` directory of TeXmacs.
 
 Load the package csvTable.
