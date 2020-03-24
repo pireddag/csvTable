@@ -76,7 +76,8 @@
     (let* ((TeXmacsTable  (file->TeXmacsTable dataPort)))
       (begin
 	;;(display fileFormat)
-	(load fileFormat)
+       ;; commented out the too-dangerous loading of a file, I am working on filtering the commands allowed through load
+	;;(load fileFormat)
 	;;(display  `(wide-tabular ,(append '(tformat) tableFormat `(,TeXmacsTable))))
 	(stree->tree (composeTable TeXmacsTable tableUserSettings tableDefaults)))))))
 
