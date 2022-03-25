@@ -1,5 +1,22 @@
 (texmacs-module (tables simple csvTable))
 
+
+;;; csvTable
+;;;
+;;; Giovanni Piredda, 2022-03-25
+;;;
+;;; it composes a TeXmacs table of the wide-tabular type,
+;;; filling it with the contents of a comma-separated values text file
+;;;
+;;;
+;;; It is written with in mind a file with a simple form: all the rows have the
+;;; same numbers of fields, separated by commas
+;;; It is tested with only one file, containing three rows of three elements
+;;; each
+;;;
+;;; It does not do any error checking
+
+
 ;; ;; string-split exists in Guile but not in Mit Scheme
 ;; ;; I assume I will be able to write the code for Guile without the following function
 ;; ;; https://codereview.stackexchange.com/questions/75172/split-string-for-r7rs
@@ -48,14 +65,6 @@
    (table->TeXmacs (table->Scheme (readTable dataPort))))
   
 ;;  adapted example of https://ds26gte.github.io/tyscheme/index-Z-H-9.html
-
-(tm-define (csvTable filename)
-	   (set! filename (tree->stree filename))
-(call-with-input-file  filename
-  (lambda (dataPort)
-    (let* ((table  (file->TeXmacsTable dataPort)))
-      (stree->tree `(wide-tabular ,table))))))
-
 
 (tm-define (insert-csvTable filename)
   (set! filename (url->system filename))
