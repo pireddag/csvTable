@@ -7,8 +7,9 @@ The `insert-csvTable` function, that imports the file as a `wide-tabular` table,
 
 ## Instructions
 
+To be able to use the function, please insert the keyboard shortcut into your `my-init-TeXmacs` file (see example) and place the `csvTable.csm` file in the `/prog/tables/simple/csvTable` directory of the `.TeXmacs` TeXMacs user configuration directory.
 
-To be able to use the function, please insert the keyboard shortcut into your `my-init-TeXmacs` file (see example).
+If  `/prog/tables/simple/csvTable`  isn't the directory whether you would like to put  the `csvTable.csm` file, then please  modify accordingly the `use-modules` form in the `my-init-texmacs.scm` configuration file. 
 
 The function expects a file with a simple structure, where every row has the same number of entries, separated by commas, and does not do any error-checking.
 
