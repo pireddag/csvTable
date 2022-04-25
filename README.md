@@ -25,6 +25,6 @@ The example shortcut checks whether the cursor is in plain text or in a `big-tab
 
 ## Warnings
 
-The function expects a file with a simple structure, where every row has the same number of entries, separated by commas, and does not do any error-checking.
+The function expects a file with a simple structure, where every row has the same number of entries, separated by commas, and **does not do any error-checking**.
 
 If using the shortcut triggers the warning widget (as one used it outside the environments where the shortcut is programmed to execute the `insert-csvTable` form), please close the widget before returning to editing your TeXmacs document, as the widget won't be closed automatically.
