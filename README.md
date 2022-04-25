@@ -33,4 +33,4 @@ If using the shortcut triggers the warning widget (as one used it outside the en
 
 ## Test file
 
-The repository includes a short .csv file,`dataSchemeTable.txt`, which contains a 3x3 table. 
+The repository includes a short .csv file, `dataSchemeTable.txt`, which contains a 3x3 table. 
