@@ -5,14 +5,20 @@
 <\body>
   <tmdoc-title|The <name|csvTable> package>
 
-  The SIunits package helps in formatting physical quantities (numbers and
-  their associated units) according to the prescription of the International
-  System. It is inspired by the siunitx <LaTeX> package by Joseph Wright
-  (<hlink|https://ctan.org/pkg/siunitx|https://ctan.org/pkg/siunitx>).
+  The csvTable plugin provides a keyboard shortcut to import a .csv file into
+  a TeXmacs document as a table.
 
-  It provides a <TeXmacs> macro named <code*|SI> which takes an arbitrary
-  number of arguments, the first of which is a number and the rest concur to
-  form the unit, and typesets the resulting physical quantity.
+  Upon typing of \ the key combination (keyboard shortcut) \Pt a b l e tab\Q
+  (that is, type \Ptable\Q followed by a tab) the plugin will present a file
+  selection window and will import in the document the contents of the
+  selected file as a table, placing the table at the cursor position.
+
+  The keyboard shortcut executes the import function only if the cursor is in
+  plain text or in a big-table <em|environment> (but not inside a table!),
+  otherwise issues a warning. Please close the warning window before
+  returning to editing your document, as TeXmacs won't do it on its own, and
+  will open a <em|new> warning window every time the keyboard shortcut is
+  executed.
 </body>
 
 <\initial>

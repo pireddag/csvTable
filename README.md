@@ -1,9 +1,9 @@
 # csvTable
-Imports a .csv file into a TeXmacs document as a table and places the table at the cursor position.
+The csvTable plugin provides a keyboard shortcut to import a .csv file into a TeXmacs document as a table.
 
-The file is imported through a Scheme function invoked in the TeXmacs editor by the key combination (keyboard shortcut) "t a b l e tab"---that is, type "table" followed by a tab.
+The file is imported through a Scheme function invoked in the TeXmacs editor by the key combination (keyboard shortcut) "t a b l e tab"---that is, type "table" followed by a tab--- and is placed as a table in the current document at the cursor position.
 
-The keyboard shortcut executes the import function only if the cursor is in plain text or in a `big-table` _environment_ (but not inside a table!), otherwise issues a warning. Please close the warning window before returning to editing your document, as TeXmacs won't do it on its own, and will open a _new_ warning window every time the keyboard shortcut is executed.
+The keyboard shortcut executes the import function only if the cursor is in plain text or in a big-table _environment_ (but not inside a table!), otherwise issues a warning. Please close the warning window before returning to editing your document, as TeXmacs won't do it on its own, and will open a _new_ warning window every time the keyboard shortcut is executed.
 
 
 ## Instructions
