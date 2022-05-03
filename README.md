@@ -1,5 +1,5 @@
-# csvTable
-The csvTable plugin provides a keyboard shortcut to import a .csv file into a TeXmacs document as a table.
+# csv-table
+The csv-table plugin provides a keyboard shortcut to import a .csv file into a TeXmacs document as a table.
 
 The file is imported through a Scheme function invoked in the TeXmacs editor by the key combination (keyboard shortcut) "t a b l e tab"---that is, type "table" followed by a tab--- and is placed as a table in the current document at the cursor position.
 
@@ -8,9 +8,9 @@ The keyboard shortcut executes the import function only if the cursor is in plai
 
 ## Instructions
 
-To be able to use the function, please place the folder csvTable in your `.TeXmacs/plugin ` folder. 
+To be able to use the function, please place the folder csv-table in your `.TeXmacs/plugin ` folder. 
 
-After you do this, you will be able to load the `csvTable` package through the `Document-> Style -> Add package` menu item or through the "plus" icon in the lowest icon bar. 
+After you do this, you will be able to load the `csv-table` package through the `Document-> Style -> Add package` menu item or through the "plus" icon in the lowest icon bar. 
 
 Once the plugin is loaded, you will be able to insert a table contained in a `.csv` file by means of the "t a b l e tab" key combination. If you type "t a b l e tab", TeXmacs will open a file selection window and will upon file selection insert the table contained in the file at the cursor position.
 
@@ -18,20 +18,20 @@ The plugin checks whether the cursor is in plain text or in a `big-table` enviro
 
 ### Details
 
-The shortcut, defined inside the Scheme file `progs/csvTable-init.csm`, executes the `insert-csvTable` function, defined inside the Scheme file `progs/csvTable.csm`, using as function argument the name of the file selected by means of the selection window.
+The shortcut, defined inside the Scheme file `progs/csv-table-init.csm`, executes the `insert-csv-table` function, defined inside the Scheme file `progs/csv-table.csm`, using as function argument the name of the file selected by means of the selection window.
 
-The `insert-csvTable` function inserts the data into the current buffer.
+The `insert-csv-table` function inserts the data into the current buffer.
 
 ## Warnings
 
 The function expects a file with a simple structure, where every row has the same number of entries, **separated by commas**, and **does not do any error-checking**.
 
-Any entry separator other than a comma will not be recognized by the `insert-csvTable` function.
+Any entry separator other than a comma will not be recognized by the `insert-csv-table` function.
 
 **I have done only a single test with a file having a structure different from what the plugin expects and TeXmacs did not crash, but I did not do enough testing to ensure that it will never crash when using the plugin, either on files formatted according to what the plugin expects or on other files.**
 
-If using the shortcut triggers the warning widget (as one used it outside the environments where the shortcut is programmed to execute the `insert-csvTable` form), please close the widget before returning to editing your TeXmacs document, as the widget won't be closed automatically.
+If using the shortcut triggers the warning widget (as one used it outside the environments where the shortcut is programmed to execute the `insert-csv-table` form), please close the widget before returning to editing your TeXmacs document, as the widget won't be closed automatically.
 
 ## Test file
 
-The repository includes a short .csv test file inside the `csvTable\doc` directory, `dataSchemeTable.txt`, which contains a 3x3 table. 
+The repository includes a short .csv test file inside the `csv-table\doc` directory, `data-scheme-table.txt`, which contains a 3x3 table. 

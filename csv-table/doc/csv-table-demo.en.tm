@@ -3,10 +3,10 @@
 <style|<tuple|tmdoc|csvTable>>
 
 <\body>
-  <doc-data|<doc-title|The csvTable plugin>>
+  <doc-data|<doc-title|The csv-table plugin>>
 
   <abstract-data|<\abstract>
-    The csvTable plugin provides a keyboard shortcut to import a .csv file
+    The csv-table plugin provides a keyboard shortcut to import a .csv file
     into a TeXmacs document as a table.
 
     Upon typing of \ the key combination (keyboard shortcut) \Pt a b l e
@@ -23,8 +23,8 @@
   </abstract>>
 
   Table inserted in plain text by typing <key|t a b l e tab> and selecting
-  the file <shell|dataSchemeTable.txt> contained in the plugin documentation
-  directory:
+  the file <shell|data-scheme-table.txt> contained in the plugin
+  documentation directory:
 
   <wide-tabular|<tformat|<table|<row|<cell|a >|<cell| b>|<cell|
   c>>|<row|<cell|d>|<cell| e>|<cell| f>>|<row|<cell|g>|<cell| h>|<cell|

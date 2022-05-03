@@ -3,10 +3,10 @@
 <style|<tuple|tmdoc|pagella-font|SIUnits_v02|old-lengths>>
 
 <\body>
-  <tmdoc-title|The <name|csvTable> package>
+  <tmdoc-title|The <name|csv-table> package>
 
-  The csvTable plugin provides a keyboard shortcut to import a .csv file into
-  a TeXmacs document as a table.
+  The csv-table plugin provides a keyboard shortcut to import a .csv file
+  into a TeXmacs document as a table.
 
   Upon typing of \ the key combination (keyboard shortcut) \Pt a b l e tab\Q
   (that is, type \Ptable\Q followed by a tab) the plugin will present a file

@@ -1,4 +1,4 @@
-(texmacs-module (csvTable))
+(texmacs-module (csv-table))
 
 (define (addLineRecursive dataPort lines)
   (let ((lineIn (read-line dataPort)))
