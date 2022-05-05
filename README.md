@@ -1,9 +1,12 @@
 # csv-table
 The csv-table plugin provides a keyboard shortcut to import a .csv file into a TeXmacs document as a table.
 
-The file is imported through a Scheme function invoked in the TeXmacs editor by the key combination (keyboard shortcut) "t a b l e tab"---that is, type "table" followed by a tab--- and is placed as a table in the current document at the cursor position.
+The file is imported and is placed as a table in the current document at the cursor position through a Scheme function. The plugin provides two separate commands for invoking it: 
 
-The keyboard shortcut executes the import function only if the cursor is in plain text or in a big-table _environment_ (but not inside a table!), otherwise issues a warning. Please close the warning window before returning to editing your document, as TeXmacs won't do it on its own, and will open a _new_ warning window every time the keyboard shortcut is executed.
+* A menu item under Insert->Table, "Insert table from csv file..."
+* A key combination (keyboard shortcut) "t a b l e tab"---that is, typing "table" followed by a tab
+
+The menu item and keyboard shortcut execute the import function only if the cursor is in plain text or in a big-table _environment_ (but not inside a table!), otherwise issues a warning. Please close the warning window before returning to editing your document, as TeXmacs won't do it on its own, and will open a _new_ warning window every time the keyboard shortcut is executed.
 
 
 ## Instructions
@@ -12,13 +15,13 @@ To be able to use the function, please place the folder csv-table in your `.TeXm
 
 After you do this, you will be able to load the `csv-table` package through the `Document-> Style -> Add package` menu item or through the "plus" icon in the lowest icon bar. 
 
-Once the plugin is loaded, you will be able to insert a table contained in a `.csv` file by means of the "t a b l e tab" key combination. If you type "t a b l e tab", TeXmacs will open a file selection window and will upon file selection insert the table contained in the file at the cursor position.
+Once the plugin is loaded, you will be able to insert a table contained in a `.csv` file by means of  either of the commands the plugin provides, that is the menu item and the "t a b l e tab" key combination. If you issue the command by choosing the "Insert table from csv file..." menu item or by typing "t a b l e tab", TeXmacs will open a file selection window and will upon file selection insert the table contained in the file at the cursor position.
 
 The plugin checks whether the cursor is in plain text or in a `big-table` environment, and opens the file selection window only if the check is positive; if it is not, it issues a warning through the `table-message-widget` widget (`table-message-widget` needs some work to become elegant).
 
 ### Details
 
-The shortcut, defined inside the Scheme file `progs/csv-table-init.csm`, executes the `insert-csv-table` function, defined inside the Scheme file `progs/csv-table.csm`, using as function argument the name of the file selected by means of the selection window.
+The shortcut and menu item, defined inside the Scheme file `progs/csv-table-init.csm`, execute the `insert-csv-table` function, defined inside the Scheme file `progs/csv-table.csm`, using as function argument the name of the file selected by means of the selection window.
 
 The `insert-csv-table` function inserts the data into the current buffer.
 
@@ -30,7 +33,7 @@ Any entry separator other than a comma will not be recognized by the `insert-csv
 
 **I have done only a single test with a file having a structure different from what the plugin expects and TeXmacs did not crash, but I did not do enough testing to ensure that it will never crash when using the plugin, either on files formatted according to what the plugin expects or on other files.**
 
-If using the shortcut triggers the warning widget (as one used it outside the environments where the shortcut is programmed to execute the `insert-csv-table` form), please close the widget before returning to editing your TeXmacs document, as the widget won't be closed automatically.
+If issuing the command for table insertion triggers the warning widget (as one used it outside the environments where the shortcut is programmed to execute the `insert-csv-table` form), please close the widget before returning to editing your TeXmacs document, as the widget won't be closed automatically.
 
 ## Test file
 

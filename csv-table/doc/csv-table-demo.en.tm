@@ -6,20 +6,22 @@
   <doc-data|<doc-title|The csv-table plugin>>
 
   <abstract-data|<\abstract>
-    The csv-table plugin provides a keyboard shortcut to import a .csv file
-    into a TeXmacs document as a table.
+    The csv-table plugin provide a command to import a .csv file into a
+    TeXmacs document as a table. The command can be issued through either a
+    menu item, under <menu|Insert|Table>, or a keyboard shortcut.\ 
 
-    Upon typing of \ the key combination (keyboard shortcut) \Pt a b l e
-    tab\Q (that is, type \Ptable\Q followed by a tab) the plugin will present
-    a file selection window and will import in the document the contents of
-    the selected file as a table, placing the table at the cursor position.
+    If you issue the command by choosing the <menu|Insert table from csv
+    file..>. menu item or by typing <verbatim|t a b l e tab> (that is, type
+    \Ptable\Q followed by a tab), TeXmacs will open a file selection window
+    and will upon file selection insert the table contained in the selected
+    file at the cursor position.
 
-    The keyboard shortcut executes the import function only if the cursor is
-    in plain text or in a big-table <em|environment> (but not inside a
-    table!), otherwise issues a warning. Please close the warning window
-    before returning to editing your document, as TeXmacs won't do it on its
-    own, and will open a <em|new> warning window every time the keyboard
-    shortcut is executed.
+    The menu item and keyboard shortcut execute the import function only if
+    the cursor is in plain text or in a big-table <em|environment> (but not
+    inside a table!), otherwise issue a warning. Please close the warning
+    window before returning to editing your document, as TeXmacs won't do it
+    on its own, and will open a <em|new> warning window every time the
+    keyboard shortcut is executed.
   </abstract>>
 
   Table inserted in plain text by typing <key|t a b l e tab> and selecting
